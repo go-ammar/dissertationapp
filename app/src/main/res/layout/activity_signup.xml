@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_normal"
+        android:background="@color/bgColor"
+        tools:context=".presentation.ui.activity.SignupActivity">
+
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            style="@style/TextViewHeading"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_normal"
+
+            app:layout_constraintBottom_toTopOf="@id/emailEt" />
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="0dp"
+            style="@style/EditTextMainBody"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/loginTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/usernameEt"
+            android:layout_width="0dp"
+            style="@style/EditTextMainBody"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/emailEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/dobEt"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_height="wrap_content"
+            android:hint="Date of Birth"
+            android:inputType="none"
+            style="@style/EditTextMainBody"
+            android:drawableEnd="@drawable/ic_calendar"
+            app:layout_constraintTop_toBottomOf="@id/usernameEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/passwordEt"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            style="@style/EditTextMainBody"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@id/dobEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/confirmPasswordEt"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            style="@style/EditTextMainBody"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@id/passwordEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginButton"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:background="@drawable/primary_button"
+            style="@style/ButtonSecondaryText"
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

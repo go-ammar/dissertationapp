@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/budgets_nav"
+    app:startDestination="@id/budgetFragment">
+
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.budget.BudgetFragment"
+        android:label="BudgetFragment"
+        tools:layout="@layout/fragment_budget">
+        <action
+            android:id="@+id/action_budgetFragment_to_addBudgetFragment"
+            app:destination="@id/addBudgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBudgetFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.budget.AddBudgetFragment"
+        android:label="AddBudgetFragment"
+        tools:layout="@layout/fragment_add_budget" />
+</navigation>

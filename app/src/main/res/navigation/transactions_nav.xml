@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/transactions_nav"
+    app:startDestination="@id/transactionHistoryFragment">
+
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.transactions.TransactionHistoryFragment"
+        android:label="fragment_transaction_history"
+        tools:layout="@layout/fragment_transaction_history" >
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.transactions.AddTransactionFragment"
+        android:label="fragment_add_transaction"
+        tools:layout="@layout/fragment_add_transaction" />
+</navigation>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account_nav"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.profile.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="dob"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="nameChange"
+            app:argType="boolean"
+ />
+        <argument
+            android:name="dobChange"
+            app:argType="boolean"
+            android:defaultValue="false"
+             />
+
+    </fragment>
+</navigation>
