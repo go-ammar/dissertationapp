@@ -102,4 +102,6 @@ dependencies {
     // For local unit tests
     testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
     kaptTest("com.google.dagger:hilt-compiler:2.51.1")
+
+    implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
 }

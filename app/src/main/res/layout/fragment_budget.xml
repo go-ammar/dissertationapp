@@ -33,11 +33,26 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     style="@style/TextViewHeading" />
 
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/viewMonthlyBudgetsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/headingTv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/ButtonSecondaryText"
+                    android:background="@drawable/primary_button"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="View Monthly Spends"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+
+                    />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/budgetRv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/headingTv"
+                    app:layout_constraintTop_toBottomOf="@id/viewMonthlyBudgetsBtn"
                     android:layout_margin="@dimen/margin_medium"
                     tools:listitem="@layout/item_budget_list"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

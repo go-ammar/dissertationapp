@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@+id/line" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/monthRv"
+            android:id="@+id/stringRv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"

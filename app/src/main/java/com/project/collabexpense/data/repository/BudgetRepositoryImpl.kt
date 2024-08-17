@@ -3,6 +3,7 @@ package com.project.collabexpense.data.repository
 import com.project.collabexpense.data.local.dao.MyDao
 import com.project.collabexpense.data.remote.ApiService
 import com.project.collabexpense.data.remote.models.Budget
+import com.project.collabexpense.data.remote.models.MonthlyCategorySpend
 import com.project.collabexpense.domain.repository.BudgetRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -19,6 +20,14 @@ class BudgetRepositoryImpl @Inject constructor(
     override fun getBudgets(): Flow<List<Budget>> {
         return flow {
             emit(apiService.getBudgets())
+        }.flowOn(Dispatchers.IO)
+
+    }
+
+    override fun getBudgetsWithData(): Flow<List<MonthlyCategorySpend>> {
+
+        return flow {
+            emit(apiService.getBudgetsWithAllData())
         }.flowOn(Dispatchers.IO)
 
     }

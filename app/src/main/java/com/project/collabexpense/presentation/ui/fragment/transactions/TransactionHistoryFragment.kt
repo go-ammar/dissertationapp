@@ -60,6 +60,13 @@ class TransactionHistoryFragment : Fragment() {
 
                     }
                     is Resource.Success -> {
+                        val adapter =  TransactionHistoryAdapter {
+
+                        }
+
+                        adapter.submitList(it.data)
+                        binding.transactionsRv.adapter = adapter
+
                         Log.d("TAG", "onViewCreated: "+it.data)
                     }
                 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -26,34 +26,28 @@
                     android:id="@+id/headingTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transaction History"
+                    android:text="Monthly Budgets"
                     android:layout_marginTop="@dimen/margin_large"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     style="@style/TextViewHeading" />
 
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/transactionsRv"
+                    android:id="@+id/budgetRv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/headingTv"
                     android:layout_margin="@dimen/margin_medium"
-                    tools:itemCount="3"
-                    tools:listitem="@layout/item_transaction_history"
+                    tools:listitem="@layout/item_monthly_spent"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addFab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/standard_margin_top"
-            android:src="@drawable/ic_add" />
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

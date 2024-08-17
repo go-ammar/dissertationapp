@@ -25,9 +25,8 @@
                 style="@style/TextViewSubHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_normal"
+                android:layout_margin="@dimen/margin_medium"
                 android:text="Grocery"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +36,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_medium"
-                android:visibility="gone"
                 android:text="Spent £150"
                 android:textColor="#391"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,9 +46,9 @@
                 style="@style/TextViewSubHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_normal"
+                android:layout_marginHorizontal="@dimen/margin_medium"
                 android:text="£300"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/progress_bar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,7 +60,6 @@
                 android:layout_margin="@dimen/margin_medium"
                 android:max="100"
                 app:indicatorColor="#313"
-                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/spentTv" />
 

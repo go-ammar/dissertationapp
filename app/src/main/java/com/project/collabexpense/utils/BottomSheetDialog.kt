@@ -1,20 +1,16 @@
 package com.project.collabexpense.utils
 
-import android.app.Activity
-import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import androidx.lifecycle.MutableLiveData
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.project.collabexpense.R
 import com.project.collabexpense.databinding.BottomSheetStringListBinding
 import com.project.collabexpense.presentation.ui.fragment.budget.MonthAdapter
 
 class BottomSheetDialog(
+    val list: List<String>
 ) : BottomSheetDialogFragment() {
 
     var stringData = MutableLiveData<String>()
@@ -41,15 +37,8 @@ class BottomSheetDialog(
             dismiss()
         }
 
-        binding.monthRv.adapter = adapter
-
-        val months = listOf(
-            "January", "February", "March", "April",
-            "May", "June", "July", "August",
-            "September", "October", "November", "December"
-        )
-
-        adapter.submitList(months)
+        binding.stringRv.adapter = adapter
+        adapter.submitList(list)
 
     }
 }

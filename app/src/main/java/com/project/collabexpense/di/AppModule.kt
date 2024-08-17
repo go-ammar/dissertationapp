@@ -12,11 +12,13 @@ import com.project.collabexpense.data.remote.ApiService
 import com.project.collabexpense.data.repository.AuthRepositoryImpl
 import com.project.collabexpense.data.repository.BudgetRepositoryImpl
 import com.project.collabexpense.data.repository.EditProfileRepositoryImpl
+import com.project.collabexpense.data.repository.GroupRepositoryImpl
 import com.project.collabexpense.data.repository.MyRepositoryImpl
 import com.project.collabexpense.data.repository.TransactionRepositoryImpl
 import com.project.collabexpense.domain.repository.AuthRepository
 import com.project.collabexpense.domain.repository.BudgetRepository
 import com.project.collabexpense.domain.repository.EditProfileRepository
+import com.project.collabexpense.domain.repository.GroupRepository
 import com.project.collabexpense.domain.repository.MyRepository
 import com.project.collabexpense.domain.repository.TransactionRepository
 import dagger.Module
@@ -147,5 +149,11 @@ object AppModule {
     fun provideTransactionRepository(
         apiService: ApiService,
     ): TransactionRepository = TransactionRepositoryImpl(apiService)
+
+    @Provides
+    @Singleton
+    fun provideGroupRepository(
+        apiService: ApiService,
+    ): GroupRepository = GroupRepositoryImpl(apiService)
 
 }

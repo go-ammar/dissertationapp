@@ -65,38 +65,6 @@
                 android:inputType="number" />
 
 
-            <TextView
-                style="@style/TextViewSubHeading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:text="Month" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium">
-
-                <EditText
-                    android:id="@+id/monthEditText"
-                    style="@style/EditTextMainBody"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="false"
-                    android:hint="Select month" />
-
-                <ImageView
-                    android:id="@+id/monthPickerButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/margin_medium"
-                    android:src="@drawable/ic_calendar" />
-
-            </RelativeLayout>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addBudgetButton"
                 android:layout_width="match_parent"

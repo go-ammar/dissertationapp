@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/groups_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/groups_nav"
+    app:startDestination="@id/myGroupsFragment">
 
+    <fragment
+        android:id="@+id/myGroupsFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.groups.MyGroupsFragment"
+        android:label="fragment_my_groups"
+        tools:layout="@layout/fragment_my_groups" />
 </navigation>

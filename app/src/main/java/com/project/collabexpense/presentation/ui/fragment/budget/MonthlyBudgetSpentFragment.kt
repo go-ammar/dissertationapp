@@ -7,67 +7,57 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import com.project.collabexpense.R
-import com.project.collabexpense.databinding.FragmentBudgetBinding
-import com.project.collabexpense.domain.model.MyData
+import com.project.collabexpense.databinding.FragmentMonthlyBudgetSpentBinding
 import com.project.collabexpense.presentation.viewmodel.BudgetViewModel
-import com.project.collabexpense.presentation.viewmodel.MyFragmentViewModel
 import com.project.collabexpense.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BudgetFragment : Fragment() {
+class MonthlyBudgetSpentFragment : Fragment() {
 
-    private var _binding: FragmentBudgetBinding? = null
+    private var _binding: FragmentMonthlyBudgetSpentBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MyFragmentViewModel by viewModels()
-    private val budgetViewModel: BudgetViewModel by viewModels()
+    private val viewModel: BudgetViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentBudgetBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentMonthlyBudgetSpentBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = BudgetAdapter {
-
-        }
-
-        binding.budgetRv.adapter = adapter
+        viewModel.getMonthlyBudgetSpends()
 
         lifecycleScope.launch {
-            budgetViewModel.getBudgets()
-
-            budgetViewModel.budget.collect {
-                when (it){
+            viewModel.monthlyBudget.collect {
+                when (it) {
                     is Resource.Error -> {
 
                     }
+
                     is Resource.Loading -> {
+
                     }
+
                     is Resource.Success -> {
+
+                        val adapter = MonthlySpendAdapter{
+
+                        }
                         adapter.submitList(it.data)
+                        binding.budgetRv.adapter = adapter
                     }
                 }
+
             }
         }
-
-        binding.addFab.setOnClickListener {
-            findNavController().navigate(R.id.addBudgetFragment)
-        }
-
-        binding.viewMonthlyBudgetsBtn.setOnClickListener {
-            findNavController().navigate(R.id.monthlyBudgetSpentFragment)
-        }
-
     }
 }
+

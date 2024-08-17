@@ -43,12 +43,12 @@ class DashboardActivity : BaseActivity() {
 
                 R.id.transaction_button -> {
                     navController.navigate(R.id.transactions_nav)
-                    false
+                    true
                 }
 
                 R.id.group_button -> {
                     navController.navigate(R.id.groups_nav)
-                    false
+                    true
                 }
 
                 R.id.budget_button -> {

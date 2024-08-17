@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import okhttp3.RequestBody
 import javax.inject.Inject
 
 class TransactionRepositoryImpl @Inject constructor(
@@ -22,6 +23,12 @@ class TransactionRepositoryImpl @Inject constructor(
     override fun getTransactions(): Flow<List<Transaction>> {
         return flow {
             emit(apiService.getUserTransactionHistory())
+        }.flowOn(Dispatchers.IO)
+    }
+
+    override fun createTransactions(body: RequestBody): Flow<Transaction> {
+        return flow {
+            emit(apiService.addTransaction(body = body))
         }
     }
 

@@ -4,6 +4,8 @@ import com.project.collabexpense.data.remote.dto.MyDataDto
 import com.project.collabexpense.data.remote.dto.TestLocal
 import com.project.collabexpense.data.remote.models.AuthResponse
 import com.project.collabexpense.data.remote.models.Budget
+import com.project.collabexpense.data.remote.models.GroupData
+import com.project.collabexpense.data.remote.models.MonthlyCategorySpend
 import com.project.collabexpense.data.remote.models.Transaction
 import com.project.collabexpense.data.remote.models.UserInfo
 import okhttp3.RequestBody
@@ -42,6 +44,18 @@ interface ApiService {
 
     @GET("transaction")
     suspend fun getUserTransactionHistory(): List<Transaction>
+
+    @GET("budget/monthly-spend")
+    suspend fun getBudgetsWithAllData(): List<MonthlyCategorySpend>
+
+    @POST("transaction")
+    suspend fun addTransaction(
+        @Body body: RequestBody
+    ): Transaction
+
+    @GET("groups/user")
+    suspend fun getUserGroups(
+    ): List<GroupData>
 
 
 }

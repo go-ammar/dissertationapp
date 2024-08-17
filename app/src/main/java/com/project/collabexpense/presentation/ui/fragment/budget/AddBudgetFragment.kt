@@ -40,17 +40,12 @@ class AddBudgetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.monthPickerButton.setOnClickListener {
-            showMonthPicker()
-        }
-
         binding.addBudgetButton.setOnClickListener {
 
             lifecycleScope.launch {
                 val jsonParams: MutableMap<String?, Any?> = ArrayMap()
                 jsonParams["category"] = binding.categoryEt.text.toString()
                 jsonParams["amount"] = binding.amountEt.text.toString()
-                jsonParams["months"] = binding.monthEditText.text.toString()
 
                 val body = JSONObject(jsonParams).toString()
                     .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
@@ -76,15 +71,4 @@ class AddBudgetFragment : Fragment() {
         }
     }
 
-    private fun showMonthPicker() {
-
-        val bottomSheetFragment = BottomSheetDialog()
-        bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
-
-        bottomSheetFragment.stringData.observe(viewLifecycleOwner) {
-            binding.monthEditText.setText(it.toString())
-        }
-
-
-    }
 }

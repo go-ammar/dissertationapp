@@ -9,6 +9,8 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
+import com.google.ai.client.generativeai.GenerativeModel
+import com.intuit.sdp.BuildConfig
 import com.project.collabexpense.base.BaseActivity
 import com.project.collabexpense.data.local.prefs.PreferenceHelper
 import com.project.collabexpense.databinding.ActivityLoginBinding
@@ -45,6 +47,9 @@ class LoginActivity : BaseActivity() {
 
         setContentView(binding.root)
 
+//        lifecycleScope.launch {
+//            ai()
+//        }
     }
 
     private fun actionViews() {
@@ -106,4 +111,17 @@ class LoginActivity : BaseActivity() {
 
         }
     }
+
+//    suspend fun ai(){
+//        val generativeModel = GenerativeModel(
+//            // For text-only input, use the gemini-pro model
+//            modelName = "gemini-1.5-flash",
+//            // Access your API key as a Build Configuration variable (see "Set up your API key" above)
+//            apiKey = "AIzaSyDS1Lfiqri47w6zi6j-r6tyZtROkEIHzy8"
+//        )
+//
+//        val prompt = "Write a story about a magic backpack."
+//        val response = generativeModel.generateContent(prompt)
+//        print("AI response : --- "+response.text)
+//    }
 }
