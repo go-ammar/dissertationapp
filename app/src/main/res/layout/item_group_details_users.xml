@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_small"
+        app:cardCornerRadius="@dimen/margin_small_mid"
+        android:layout_marginHorizontal="@dimen/margin_extra_small"
+        android:id="@+id/card"
+        android:elevation="2dp"
+        >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground">
+
+            <!-- User Name -->
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <!-- User Email -->
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Email"
+                android:textSize="14sp"/>
+
+            <!-- Share Amount -->
+            <TextView
+                android:id="@+id/shareAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share Amount"
+                android:textSize="14sp"/>
+
+            <!-- Payment Status -->
+            <TextView
+                android:id="@+id/isPaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Status"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

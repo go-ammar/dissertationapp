@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/bgColor"
+        android:padding="16dp">
+
+        <!-- Group Name Input -->
+        <EditText
+            android:id="@+id/et_group_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Group Name"
+            android:inputType="text" />
+
+
+
+        <!-- Dynamic User Emails Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Emails"
+            android:textStyle="bold"
+            android:paddingTop="16dp" />
+
+        <LinearLayout
+            android:id="@+id/emails_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- This will be the container for dynamically added email fields -->
+        </LinearLayout>
+
+        <!-- Button to Add More Emails -->
+        <Button
+            android:id="@+id/btn_add_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Email"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Group"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</layout>

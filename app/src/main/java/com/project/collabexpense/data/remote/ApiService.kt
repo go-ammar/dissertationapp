@@ -5,6 +5,8 @@ import com.project.collabexpense.data.remote.dto.TestLocal
 import com.project.collabexpense.data.remote.models.AuthResponse
 import com.project.collabexpense.data.remote.models.Budget
 import com.project.collabexpense.data.remote.models.GroupData
+import com.project.collabexpense.data.remote.models.GroupDetails
+import com.project.collabexpense.data.remote.models.GroupTransactionAdded
 import com.project.collabexpense.data.remote.models.MonthlyCategorySpend
 import com.project.collabexpense.data.remote.models.Transaction
 import com.project.collabexpense.data.remote.models.UserInfo
@@ -12,6 +14,7 @@ import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -57,5 +60,20 @@ interface ApiService {
     suspend fun getUserGroups(
     ): List<GroupData>
 
+    @POST("groups/create")
+    suspend fun createGroup(
+        @Body requestBody: RequestBody
+    ): GroupData
+
+
+    @GET("groups/{id}")
+    suspend fun getGroupDetails(
+        @Path("id") groupId: Long
+    ): GroupDetails
+
+    @POST("groups/transactions")
+    suspend fun addGroupTransaction(
+        @Body requestBody: RequestBody
+    ): GroupTransactionAdded
 
 }

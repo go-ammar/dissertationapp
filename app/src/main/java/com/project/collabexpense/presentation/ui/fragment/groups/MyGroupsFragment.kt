@@ -1,16 +1,16 @@
 package com.project.collabexpense.presentation.ui.fragment.groups
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.project.collabexpense.R
-import com.project.collabexpense.databinding.FragmentDashboardBinding
+import androidx.navigation.fragment.findNavController
 import com.project.collabexpense.databinding.FragmentMyGroupsBinding
 import com.project.collabexpense.presentation.viewmodel.GroupViewModel
+import com.project.collabexpense.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -37,7 +37,35 @@ class MyGroupsFragment : Fragment() {
 
         lifecycleScope.launch {
             viewModel.getUserGroups()
+
+            viewModel.userGroupList.collect {
+                when (it) {
+                    is Resource.Error -> {}
+                    is Resource.Loading -> {}
+                    is Resource.Success -> {
+
+                        val adapter = MyGroupsAdapter {groupData ->
+                            val action = MyGroupsFragmentDirections.actionMyGroupsFragmentToGroupDetailsFragment(
+                                groupData.id?.toLong()!!
+                            )
+                            findNavController().navigate(action)
+                        }
+
+
+                        adapter.submitList(it.data)
+
+                        binding.groupsRv.adapter = adapter
+
+                    }
+                }
+            }
         }
+
+        binding.addFab.setOnClickListener {
+            val action = MyGroupsFragmentDirections.actionMyGroupsFragmentToCreateGroupFragment()
+            findNavController().navigate(action)
+        }
+
     }
 
 }

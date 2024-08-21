@@ -9,5 +9,50 @@
         android:id="@+id/myGroupsFragment"
         android:name="com.project.collabexpense.presentation.ui.fragment.groups.MyGroupsFragment"
         android:label="fragment_my_groups"
-        tools:layout="@layout/fragment_my_groups" />
+        tools:layout="@layout/fragment_my_groups" >
+        <action
+            android:id="@+id/action_myGroupsFragment_to_createGroupFragment"
+            app:destination="@id/createGroupFragment" />
+        <action
+            android:id="@+id/action_myGroupsFragment_to_groupDetailsFragment"
+            app:destination="@id/groupDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createGroupFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.groups.CreateGroupFragment"
+        android:label="fragment_create_group"
+        tools:layout="@layout/fragment_create_group" />
+    <fragment
+        android:id="@+id/groupDetailsFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.groups.GroupDetailsFragment"
+        android:label="fragment_group_details"
+        tools:layout="@layout/fragment_group_details" >
+        <argument
+            android:name="groupId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_groupDetailsFragment_to_addGroupTransactionFragment"
+            app:destination="@id/addGroupTransactionFragment" />
+        <action
+            android:id="@+id/action_groupDetailsFragment_to_groupTransactionDetailFragment"
+            app:destination="@id/groupTransactionDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGroupTransactionFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.groups.AddGroupTransactionFragment"
+        android:label="fragment_add_group_transaction"
+        tools:layout="@layout/fragment_add_group_transaction" >
+        <argument
+            android:name="groupId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupTransactionDetailFragment"
+        android:name="com.project.collabexpense.presentation.ui.fragment.groups.GroupTransactionDetailFragment"
+        android:label="fragment_group_transaction_detail"
+        tools:layout="@layout/fragment_group_transaction_detail" >
+        <argument
+            android:name="transaction"
+            app:argType="com.project.collabexpense.data.remote.models.Transactions" />
+    </fragment>
 </navigation>
