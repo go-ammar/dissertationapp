@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.project.collabexpense.databinding.FragmentGroupDetailsBinding
+import com.project.collabexpense.presentation.ui.fragment.groups.adapters.GroupDetailTransactionAdapter
 import com.project.collabexpense.presentation.viewmodel.GroupViewModel
 import com.project.collabexpense.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint

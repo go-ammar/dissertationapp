@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.project.collabexpense.databinding.FragmentMonthlyBudgetSpentBinding
+import com.project.collabexpense.presentation.ui.fragment.budget.adapters.MonthlySpendAdapter
 import com.project.collabexpense.presentation.viewmodel.BudgetViewModel
 import com.project.collabexpense.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint

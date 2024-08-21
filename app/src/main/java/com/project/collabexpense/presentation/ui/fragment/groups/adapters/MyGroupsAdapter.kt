@@ -1,4 +1,4 @@
-package com.project.collabexpense.presentation.ui.fragment.groups
+package com.project.collabexpense.presentation.ui.fragment.groups.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,22 +8,19 @@ import androidx.recyclerview.widget.DiffUtil
 import com.project.collabexpense.R
 import com.project.collabexpense.base.BaseAdapter
 import com.project.collabexpense.data.remote.models.GroupData
-import com.project.collabexpense.data.remote.models.Transactions
-import com.project.collabexpense.data.remote.models.UserShares
-import com.project.collabexpense.databinding.ItemGroupDetailsUsersBinding
 import com.project.collabexpense.databinding.ItemMygroupsBinding
 
-class GroupDetailsUsersAdapter (
+class MyGroupsAdapter (
     private val onClickListener: (model: GroupData) -> Unit,
-) : BaseAdapter<Transactions>(
+) : BaseAdapter<GroupData>(
 
-    diffCallback = object : DiffUtil.ItemCallback<Transactions>() {
+    diffCallback = object : DiffUtil.ItemCallback<GroupData>() {
 
-        override fun areItemsTheSame(oldItem: Transactions, newItem: Transactions): Boolean {
+        override fun areItemsTheSame(oldItem: GroupData, newItem: GroupData): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Transactions, newItem: Transactions): Boolean {
+        override fun areContentsTheSame(oldItem: GroupData, newItem: GroupData): Boolean {
             return oldItem == newItem
         }
 
@@ -31,19 +28,20 @@ class GroupDetailsUsersAdapter (
     override fun createBinding(parent: ViewGroup, viewType: Int): ViewDataBinding {
         return DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.item_group_details_transactions,
+            R.layout.item_mygroups,
             parent,
             false
         )
     }
 
-    override fun bind(binding: ViewDataBinding, item: Transactions, position: Int) {
+    override fun bind(binding: ViewDataBinding, item: GroupData, position: Int) {
         when (binding) {
-            is ItemGroupDetailsUsersBinding ->
+            is ItemMygroupsBinding ->
                 binding.apply {
+                    categoryTv.text = item.name
 
                     card.setOnClickListener {
-//                        onClickListener.invoke(item)
+                        onClickListener.invoke(item)
                     }
                 }
         }

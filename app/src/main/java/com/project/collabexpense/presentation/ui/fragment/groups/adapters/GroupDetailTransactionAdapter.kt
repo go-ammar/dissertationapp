@@ -1,4 +1,4 @@
-package com.project.collabexpense.presentation.ui.fragment.groups
+package com.project.collabexpense.presentation.ui.fragment.groups.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

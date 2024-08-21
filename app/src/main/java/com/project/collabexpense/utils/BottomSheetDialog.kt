@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.project.collabexpense.databinding.BottomSheetStringListBinding
-import com.project.collabexpense.presentation.ui.fragment.budget.MonthAdapter
+import com.project.collabexpense.presentation.ui.fragment.budget.adapters.MonthAdapter
 
 class BottomSheetDialog(
     val list: List<String>

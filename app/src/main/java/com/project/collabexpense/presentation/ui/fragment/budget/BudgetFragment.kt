@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.project.collabexpense.R
 import com.project.collabexpense.databinding.FragmentBudgetBinding
-import com.project.collabexpense.domain.model.MyData
+import com.project.collabexpense.presentation.ui.fragment.budget.adapters.BudgetAdapter
 import com.project.collabexpense.presentation.viewmodel.BudgetViewModel
 import com.project.collabexpense.presentation.viewmodel.MyFragmentViewModel
 import com.project.collabexpense.utils.Resource

@@ -1,4 +1,4 @@
-package com.project.collabexpense.presentation.ui.fragment.transactions
+package com.project.collabexpense.presentation.ui.fragment.transactions.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,9 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import com.project.collabexpense.R
 import com.project.collabexpense.base.BaseAdapter
-import com.project.collabexpense.data.remote.models.Budget
 import com.project.collabexpense.data.remote.models.Transaction
-import com.project.collabexpense.databinding.ItemBudgetListBinding
 import com.project.collabexpense.databinding.ItemTransactionHistoryBinding
 import com.project.collabexpense.domain.model.MyData
 import java.text.SimpleDateFormat

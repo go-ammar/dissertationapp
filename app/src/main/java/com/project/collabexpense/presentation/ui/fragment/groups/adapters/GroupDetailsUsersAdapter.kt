@@ -1,4 +1,4 @@
-package com.project.collabexpense.presentation.ui.fragment.groups
+package com.project.collabexpense.presentation.ui.fragment.groups.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,23 +7,21 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import com.project.collabexpense.R
 import com.project.collabexpense.base.BaseAdapter
-import com.project.collabexpense.data.remote.models.Budget
 import com.project.collabexpense.data.remote.models.GroupData
-import com.project.collabexpense.databinding.ItemBudgetListBinding
-import com.project.collabexpense.databinding.ItemMygroupsBinding
-import com.project.collabexpense.domain.model.MyData
+import com.project.collabexpense.data.remote.models.Transactions
+import com.project.collabexpense.databinding.ItemGroupDetailsUsersBinding
 
-class MyGroupsAdapter (
+class GroupDetailsUsersAdapter (
     private val onClickListener: (model: GroupData) -> Unit,
-) : BaseAdapter<GroupData>(
+) : BaseAdapter<Transactions>(
 
-    diffCallback = object : DiffUtil.ItemCallback<GroupData>() {
+    diffCallback = object : DiffUtil.ItemCallback<Transactions>() {
 
-        override fun areItemsTheSame(oldItem: GroupData, newItem: GroupData): Boolean {
+        override fun areItemsTheSame(oldItem: Transactions, newItem: Transactions): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: GroupData, newItem: GroupData): Boolean {
+        override fun areContentsTheSame(oldItem: Transactions, newItem: Transactions): Boolean {
             return oldItem == newItem
         }
 
@@ -31,20 +29,19 @@ class MyGroupsAdapter (
     override fun createBinding(parent: ViewGroup, viewType: Int): ViewDataBinding {
         return DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.item_mygroups,
+            R.layout.item_group_details_transactions,
             parent,
             false
         )
     }
 
-    override fun bind(binding: ViewDataBinding, item: GroupData, position: Int) {
+    override fun bind(binding: ViewDataBinding, item: Transactions, position: Int) {
         when (binding) {
-            is ItemMygroupsBinding ->
+            is ItemGroupDetailsUsersBinding ->
                 binding.apply {
-                    categoryTv.text = item.name
 
                     card.setOnClickListener {
-                        onClickListener.invoke(item)
+//                        onClickListener.invoke(item)
                     }
                 }
         }

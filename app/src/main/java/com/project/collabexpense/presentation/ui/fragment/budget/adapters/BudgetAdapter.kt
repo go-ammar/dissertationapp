@@ -1,4 +1,4 @@
-package com.project.collabexpense.presentation.ui.fragment.budget
+package com.project.collabexpense.presentation.ui.fragment.budget.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.project.collabexpense.R
-import com.project.collabexpense.databinding.FragmentProfileBinding
 import com.project.collabexpense.databinding.FragmentTransactionHistoryBinding
+import com.project.collabexpense.presentation.ui.fragment.transactions.adapters.TransactionHistoryAdapter
 import com.project.collabexpense.presentation.viewmodel.TransactionViewModel
 import com.project.collabexpense.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
